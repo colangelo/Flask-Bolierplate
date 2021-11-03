@@ -1,6 +1,6 @@
-# Create a test Flask 2.0 app
+# Flask 2 : Bolierplate app
 
-This Flask 2.0 app has the following features:
+This Flask 2 app has the following features:
 
 - uses Flask Werkzeug webserver (not for production)
 - Flask is set to run in development mode (so every change to the app.py file reloads the app)
@@ -8,6 +8,8 @@ This Flask 2.0 app has the following features:
 - has curl, netcat, ps and vi (vim-tiny) commands installed
 - runs as root
 - single stage build
+- uses Python 3.10 Debian Bullseye Slim image (less than 140 MB)
+- can be deployed to Kubernetes (with or without nginx ingress)
 
 Reference for Flask ENV variables:
 
@@ -40,7 +42,7 @@ docker image build -t flask:v1 .
 docker run -d -p 8000:8000 flask:v1
 
 #
-docker exec -it <container_id> /bin/sh
+docker exec -it <container_id> /bin/bash
 ```
 
 ## Deploy to Minikube / Kubernetes
