@@ -23,8 +23,12 @@ spec:
               containerPort: 8000
               protocol: TCP
           env:
-            - name: TEST_ENV
-              value: "test-value"
+            - name: FLASK_APP
+              value: "app:app"
+            - name: FLASK_ENV
+              value: "development"
+            - name: FLASK_DEBUG
+              value: "1"
           resources:
             limits:
               cpu: 200m
